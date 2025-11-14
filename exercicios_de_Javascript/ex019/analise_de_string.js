@@ -1,0 +1,10 @@
+const s = process.argv.slice(2).join(" ") || "Universidade";
+const len = s.length;
+const upper = s.toUpperCase();
+const vowels = (s.match(/[aeiouAEIOU]/g)||[]).length;
+const startsUNI = s.toUpperCase().startsWith("UNI");
+const endsRIO = s.toUpperCase().endsWith("RIO");
+const digits = (s.match(/[0-9]/g)||[]).length;
+const cleaned = s.replace(/[^A-Za-z0-9]/g,"").toLowerCase();
+const isPal = cleaned === cleaned.split("").reverse().join("");
+console.log({len, upper, vowels, startsUNI, endsRIO, digits, isPal});
